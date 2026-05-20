@@ -4,7 +4,8 @@ while True:
     print("\n===== INVENTORY MANAGER =====")
     print("1. Add product")
     print("2. Show inventory")
-    print("3. Exit")
+    print("3. Delete product")
+    print("4. Exit")
 
     option = input("Choose an option: ")
 
@@ -27,9 +28,18 @@ while True:
                 print(f"{product}: {quantity}")
 
     elif option == "3":
+        product = input("Product to delete: ")
+
+        if product in inventory:
+            del inventory[product]
+            print(f"{product} deleted successfully!")
+
+        else:
+            print("Product not found.")
+
+    elif option == "4":
         print("Exiting program...")
         break
 
     else:
         print("Invalid option.")
-      
